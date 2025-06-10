@@ -20,21 +20,21 @@ class test {
         // else{
         //     System.out.print("oombungada");
         // }
-        // int eng = scan.nextInt();
-        // int tam = scan.nextInt();
-        // int maths = scan.nextInt();
-        // int sci = scan.nextInt();
-        // int soc = scan.nextInt();
-        // int total;
-        // double avg;
-        // total = eng+tam+maths+sci+soc;
-        // avg = total/5;
-        // if(avg<35){
-        //     System.out.print("Additional cls required");
-        // }
-        // else{
-        //     System.out.print("good to go");
-        // }
+        int eng = scan.nextInt();
+        int tam = scan.nextInt();
+        int maths = scan.nextInt();
+        int sci = scan.nextInt();
+        int soc = scan.nextInt();
+        int total;
+        double avg;
+        total = eng+tam+maths+sci+soc;
+        avg = total/5;
+        if(avg<35){
+            System.out.print("Additional cls required");
+        }
+        else{
+            System.out.print("good to go");
+        }
         // System.out.print("Enter the color : ");
         // String color = scan.nextLine();
         // if(color.equals("red")||color.equals("RED")){
@@ -103,5 +103,22 @@ class test {
         // else{
         //     System.out.print("zero");
         // }
+    }
+}
+
+public class conditionals{
+    public static void main(String[] args)
+    {
+        int var = 2;
+        switch(var){
+            case 1:
+                System.out.print("one");
+                break;
+            case 2:
+                System.out.print("two");
+                break;
+            default:
+                System.out.print("def");
+        }
     }
 }
