@@ -1,3 +1,4 @@
+import java.util.Scanner;
 // public class Mobile{
 //     void iphone(){
 //         System.out.println("Iphone costly");
@@ -17,23 +18,36 @@
 //         m1.oppo();
 //     }
 // }
-import java.util.Scanner;
+
 // class Addition{
-//     int a = 10;
-//     int b = 4;
-//     int sum(int c,int d){
-//         return c+d;
+//     int num1;
+//     int num2;
+//     Addition(int num1,int num2){
+//         this.num1 = num1;
+//         this.num2 = num2;
+//     }
+//     int add(){
+//         return this.num1+this.num2;
+//     }
+//     int sub(){
+//         return this.num1-this.num2;
+//     }
+//     int mul(){
+//         return this.num1*this.num2;
+//     }
+//     int div(){
+//         return (int)Math.ceil((double)this.num1/this.num2);
 //     }
 //     public static void main(String args[])
 //     {
 //         Scanner scan = new Scanner(System.in);
-//         Addition add1 = new Addition();
-//         System.out.println("ENter first val :");
+//         System.out.print("ENter first val :");
 //         int a1 = scan.nextInt();
-//         System.out.println("Enter sec");
+//         System.out.print("Enter sec :");
 //         int b1 = scan.nextInt();
-//         int val = add1.sum(a1,b1);
-//         System.out.println("The sum :"+val);
+//         Addition add1 = new Addition(a1,b1);
+//         int val = add1.div();
+//         System.out.println("The ans :"+val);
 //         scan.close();
 //     }
 // }
@@ -148,14 +162,15 @@ import java.util.Scanner;
 //     }
 
 //     @Override
-//     public String toString() {
-//         return "Name: " + name + ", Marks: " + marks;
+//     public String toString(){
+//         return "ivan peru "+ name;
 //     }
+    
 //     public static void main(String args[]) {
 //         Student s1 = new Student(12, "Thamara");
 //         Student s2 = new Student(14, "Thandam");
 //         int mark = s1.getMarks();
-//         System.out.print(mark);
+//         System.out.println(mark);
 //         System.out.println(s1);
 //         System.out.println(s2);
 //     }
@@ -183,6 +198,7 @@ import java.util.Scanner;
 
 //     }
 // }
+
 // class Teacher {
 //     String name = "preethu";
 //     int exp = 10;
@@ -192,13 +208,14 @@ import java.util.Scanner;
 //     String name = "Yjnigga";
 // }
 
-// class MainOne {  
-//     public static void main(String[] args) {
+// public class Mobile {  
+//     public static void main(String args[]) {
 //         Student s1 = new Student();
 //         System.out.print(s1.name);
 //         System.out.print(s1.exp);
 //     }
 // }
+
 //Single Inheritance
 // class Animal{
 //     void eat(){
@@ -276,6 +293,7 @@ import java.util.Scanner;
 //         obj.show();
 //     }
 // }
+
 // class Animal{
 //     String name;
 //     int age;
@@ -385,7 +403,7 @@ import java.util.Scanner;
 
 // class Dog extends Animal{
 //     Dog(){
-//         super();
+//         super();  
 //         System.out.println(super.name);
 //         super.makeSound();
 //         System.out.println("Dog oda bow");
@@ -396,6 +414,7 @@ import java.util.Scanner;
 //     public static void main(String args[])
 //     {
 //         Dog d1 = new Dog(); 
+//         //d1.makeSound();
 //     }
 // }
 
@@ -424,7 +443,8 @@ import java.util.Scanner;
 //         emp.display();
 //     }
 // }
-// Abstract class
+
+// // Abstract class
 // abstract class Vehicle{
 //     String brand;
 //     int year;
@@ -474,6 +494,7 @@ import java.util.Scanner;
 //         System.out.println(c1.fueltype);
 //     }
 // }
+
 // class Student{
 //     private int exp = 12;
 //     int display(){
@@ -485,6 +506,7 @@ import java.util.Scanner;
 //     public static void main(String args[])
 //     {
 //         Student s1 = new Student();
+//         //System.out.println(s1.exp); -> No private access
 //         int val = s1.display();
 //         System.out.print(val);
 //     }
@@ -522,6 +544,7 @@ import java.util.Scanner;
 //         System.out.println("sec");
 //     }
 // }
+
 //Final
 // class one{
 //     final void func(){
@@ -529,10 +552,10 @@ import java.util.Scanner;
 //     }
 // }
 // class two extends one{
-//     // @Override
-//     // void func(){
-//     //     System.out.println("rwo");
-//     // }
+//     @Override //final can't be overriden
+//     void func(){
+//         System.out.println("rwo");
+//     }
 // }
 // public class Mobile{
 //     public static void main(String args[])

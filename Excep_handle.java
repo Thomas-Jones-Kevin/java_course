@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
-//Arithmetic exception error
+// Arithmetic exception error
 // public class Excep_handle{
 //     public static void main(String args[])
 //     {
@@ -30,12 +30,13 @@ import java.util.InputMismatchException;
 //         System.out.println("code ends");
 //     }
 // }
+
 // public class Excep_handle{
 //     public static void main(String args[])
 //     {
 //         Scanner scan = new Scanner(System.in);
 //         try{
-//             int val = scan.nextInt();
+//             //int val = scan.nextInt();
 //             int ans = 2/0;
 //             System.out.println("worked");
 //         }
@@ -90,6 +91,7 @@ import java.util.InputMismatchException;
 //             if(age<=0){
 //                 throw new ArithmeticException("age should be 1 or more");
 //             }
+//             System.out.println("valid age");
 //         }
 //         catch(Exception e){
 //             System.out.println(e);
@@ -137,7 +139,7 @@ import java.util.InputMismatchException;
 //     public static void main(String args[])
 //     {
 //         DivisionExample d1 = new DivisionExample();
-//         d1.divide(0,3);
+//         d1.divide(3,0);
 //     }
 // }
 
@@ -158,8 +160,9 @@ import java.util.InputMismatchException;
 //                 System.out.println(age+"is valid");
 //             }
 //         }
+
 //         catch(Exception e){
-//             System.out.println(e);
+//             System.out.print(e);
 //         }
 //     }
 //     public static void main(String args[])
@@ -174,24 +177,25 @@ import java.util.InputMismatchException;
 // }
 
 //Throws
-// class Calc{
-//     void divide(int a,int b) throws Exception{
-//         int res = a/b;
-//         System.out.println(res);
-//     }
-// }
+class Calc{
+    void divide(int a,int b) throws Exception{
+        int res = a/b;
+        System.out.println(res);
+    }
+}
 
-// public class Excep_handle{
-//     public static void main(String args[])
-//     {
-//         Calc c1 = new Calc();
-//         try{
-//             c1.divide(4,0);
-//         }
-//         catch(Exception e){
-//             System.out.println(e);
-//         }
-//     }
+public class Excep_handle{
+    public static void main(String args[])
+    {
+        Calc c1 = new Calc();
+        try{
+            c1.divide(4,0);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
 
-// }
+}
+
 

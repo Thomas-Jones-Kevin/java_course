@@ -11,7 +11,7 @@
 
 // class Phone{
 
-//     String brand = "";
+//     String brand = "fdkn";
 //     String model = "";
 //     int price = 0;
 //     String fun(){
@@ -24,6 +24,9 @@
 //     }
 //     static void some(){
 //         System.out.println("\ni love you");
+//     }
+//     static String check(){
+//         return "gouthann";
 //     }
 //     public static void main(String args[])
 //     {
@@ -42,6 +45,7 @@
 //         String out = p2.secf();
 //         System.out.print(out);
 //         some();
+//         System.out.println(check());
 //     }    
 
 // }
@@ -64,6 +68,9 @@
 //         this.address = address;
 //     }
 
+//     int getSsn(){
+//         return this.ssn;
+//     }
 // }
 
 // class Employee extends Person{
@@ -83,10 +90,12 @@
 //         System.out.println(e1.age);
 //         //System.out.println(e1.ssn);
 //         System.out.println(e1.address);
+//         int val = e1.getSsn(); //do this to get the private var value
+//         System.out.println(val);
 //     }
 // }
 
-//Coding challenge -> 2
+// Coding challenge -> 2
 // class Counter {
 //     static int count;
 //     int instance_no;
@@ -108,6 +117,7 @@
 // }
 
 //Coding challenge -> 3
+// final class and final variable cannot be inherited and modified respectively
 // final class ConstantValues{
 //     final double pi = 3.14;
 // }
@@ -120,7 +130,7 @@
 //     public static void main(String args[])
 //     {
 //         ConsOVer c1 = new ConsOVer();
-//         c1.pi = 34;
+//         //c1.pi = 34;
 //         System.out.println(c1.pi);
 //     }
 // }
@@ -142,6 +152,10 @@
 //         super(name,age);
 //         this.breed = breed;
 //     }
+//     @Override
+//     public String toString(){
+//         return "ithu oru naiyuu athathu"+name;
+//     }
 //     void makeSound(){
 //         System.out.println("Dog class");
 //     }
@@ -162,6 +176,7 @@
 //     public static void main(String args[])
 //     {
 //         Dog d1 = new Dog("tom",12,"labo");
+//         System.out.println(d1);
 //         d1.makeSound();
 //         Cat c1 = new Cat("subra",14,"blue");
 //         c1.makeSound();
@@ -169,60 +184,72 @@
 // }
 
 //Coding challenge -> 5
-// abstract class Vehicle{
+// Abstract base class
+// abstract class Vehicle {
 //     String mode;
-//     Vehicle(String mode){
+
+//     Vehicle(String mode) {
 //         this.mode = mode;
 //     }
-//     final void StartEngine(){
-//         System.out.println("ENgine starfted");
+
+//     final void startEngine() {
+//         System.out.println("Engine started");
 //     }
-//     static String getVehiceType(String mode){
-//         return mode;
+
+//     // Instance method – returns the vehicle's mode/type
+//     String getVehicleType() {
+//         return this.mode;
 //     }
+
+//     // Abstract method
 //     abstract void drive();
 // }
 
-// class Car extends Vehicle{
-//     Car(String mode){
-//         super(mode);
-//     }
-//     @Override
-//     void drive(){
-//         System.out.println("Car drives");
-//     }
-// }
-
-// class Bus extends Vehicle{
-//     Bus(String mode){
+// // Car class extending Vehicle
+// class Car extends Vehicle {
+//     Car(String mode) {
 //         super(mode);
 //     }
 
 //     @Override
-//     void drive(){
-//         System.out.println("Bus rolls");
+//     void drive() {
+//         System.out.println("Car drives on " + getVehicleType());
 //     }
 // }
 
-// public class Hotel{
-//     public static void main(String args[]){
+// // Bus class extending Vehicle
+// class Bus extends Vehicle {
+//     Bus(String mode) {
+//         super(mode);
+//     }
+
+//     @Override
+//     void drive() {
+//         System.out.println("Bus rolls on " + getVehicleType());
+//     }
+// }
+
+// // Driver class with main()
+// public class Hotel {
+//     public static void main(String[] args) {
 //         Car c1 = new Car("land");
+//         c1.startEngine();
 //         c1.drive();
-//         String ans = c1.getVehiceType("hell");
-//         System.out.println(ans);
-//         Bus b1 = new Bus("terres");
+//         System.out.println("Vehicle type: " + c1.getVehicleType());
+
+//         System.out.println();
+
+//         Bus b1 = new Bus("terrestrial");
+//         b1.startEngine();
 //         b1.drive();
-//         //b1.getVehiceType();
-//         b1.StartEngine();
-
-
+//         System.out.println("Vehicle type: " + b1.getVehicleType());
 //     }
 // }
 
 //Interfaces
 // interface Animal{
 //     String name = "hello"; // public static final String name;
-//     void makeSound();
+//     void makeSound(); // it is taken as abstract method
 
 //     default void display(){
 //         System.out.println(name);
@@ -230,6 +257,7 @@
 // }
 
 // class Dog implements Animal{
+//     @Override
 //     public void makeSound(){
 //         System.out.println("bowww");
 //     }
@@ -246,7 +274,7 @@
 //     }
 // }
 
-// //Interface coding challenge -> 1
+// Interface coding challenge -> 1
 // interface Playable{
 //     void play();
 // }
@@ -316,7 +344,7 @@
 // }
 
 
-// Interface 1: Controllable
+// // Interface 1: Controllable
 // interface Controllable {
 //     void turnOn();
 //     void turnOff();
@@ -392,6 +420,8 @@
 //         h1.setColor("grey");
 //     }
 // }
+
+
 // interface Engine {
 //     int power = 12;
 //     // by default: public static final
@@ -404,17 +434,17 @@
 // }
 
 // class Car implements Engine, MusicSystem {
-//     String model = "uhrejer";
-//     // Car(String model) {
-//     //     this.model = model;
-//     // }
+//     String model;
+//     Car(String model) {
+//         this.model = model;
+//     }
 
 //     public void startEngine() {
-//         System.out.println(this.model + " engine started with power: " + this.power + " HP");
+//         System.out.println(this.model + " engine started with power: " + Engine.power + " HP");
 //     }
 
 //     public void playMusic() {
-//         System.out.println("Playing music using " + this.brand + " system");
+//         System.out.println("Playing music using " + MusicSystem.brand + " system");
 //     }
 
 //     void showDetails() {
@@ -424,12 +454,13 @@
 
 // public class Hotel {
 //     public static void main(String[] args) {
-//         Car myCar = new Car();
+//         Car myCar = new Car("zxr");
 //         myCar.showDetails();
 //         myCar.startEngine();
 //         myCar.playMusic();
 //     }
 // }
+
 // class Hotel{
 //     int age = 12;
 //     //System.out.println(age);
@@ -455,17 +486,25 @@
 //         a1.disp();
 //     }
 // }
-// import java.util.Scanner;
-// interface A{
-//     void disname(String name);
-// }
 
-// public class Hotel{
-//     public static void main(String args[]){
-//         // Scanner scan = new Scanner(System.in);
-//         // String name = scan.nextLine();
-//         A a1 = (String name)->System.out.println("kaavala ulla "+name);
-//         a1.disname("jones");
-//     }
-// }
+
+import java.util.Scanner;
+interface A{
+    int age = 12;
+    void disname(String name);
+}
+
+public class Hotel{
+    public static void main(String args[]){
+        // Scanner scan = new Scanner(System.in);
+        // String name = scan.nextLine();
+        // A a1 = (String name)->System.out.println("kaavala ulla "+name);
+        A a1 = new A(){
+            public void disname(String name){
+                System.out.println("check da otha "+name+"van age:"+A.age);
+            }
+        };
+        a1.disname("jones");
+    }
+}
 
