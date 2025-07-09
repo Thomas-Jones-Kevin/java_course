@@ -177,25 +177,123 @@ import java.util.InputMismatchException;
 // }
 
 //Throws
-class Calc{
-    void divide(int a,int b) throws Exception{
-        int res = a/b;
-        System.out.println(res);
-    }
-}
+// class Calc{
+//     void divide(int a,int b) throws Exception{
+//         int res = a/b;
+//         System.out.println(res);
+//     }
+// }
 
+// public class Excep_handle{
+//     public static void main(String args[])
+//     {
+//         Calc c1 = new Calc();
+//         try{
+//             c1.divide(4,0);
+//         }
+//         catch(Exception e){
+//             System.out.println(e);
+//         }
+//     }
+
+// }
+import java.util.Scanner;
+import java.util.*;
 public class Excep_handle{
-    public static void main(String args[])
-    {
-        Calc c1 = new Calc();
-        try{
-            c1.divide(4,0);
+    int[] arr = new int[15];
+    int second(int[] arr){
+        int num = arr[0];
+        int num1 = 0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>num){
+                num1 = num;
+                num = arr[i];
+            }
+            else if(num1<arr[i] && arr[i]<num){
+                num1 = arr[i];
+            }
+            else{
+                continue;
+            }
         }
-        catch(Exception e){
-            System.out.println(e);
+        if(num1!=0){
+            return num1;
+        }
+        else{
+            return -1;
         }
     }
 
+    List<String> count(int[] arr){
+        List<String> list = new ArrayList<>();
+        boolean[] visited = new boolean[arr.length];
+        for(int i=0;i<arr.length;i++){
+            if(visited[i]) continue;
+            int count = 1;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    count++;
+                    visited[j] = true;
+                }
+            }
+            String ans = String.format("count of %d is %d",arr[i],count);
+            list.add(ans);
+        }
+        return list;
+    }
+
+    int missing(int arr[]){
+        int res = arr.length;
+        for(int i=0;i<arr.length;i++){
+            res+=i-arr[i];
+        }
+        return res;
+    }
+
+    int missing_xor(int[] arr){
+        int res = arr.length;
+        for(int i:arr){
+            res^=i;
+        }
+        return res;
+    }
+
+    int this_miss(int[] arr){
+        int len = arr.length+1;
+        int actual = 0;
+        int sum = 0;
+        for(int i=1;i<=len;i++){
+            actual+=i;
+        }
+        for(int i:arr){
+            sum+=i;
+        }
+        return actual-sum;
+    }
+
+    public static void main(String args[]){
+        Excep_handle e1 = new Excep_handle();
+        Scanner scan = new Scanner(System.in);
+        // System.out.print("Enter length :");
+        // int n = scan.nextInt();
+        // int[] arr = new int[n];
+        // for(int i=0;i<arr.length;i++){
+        //     int val = scan.nextInt();
+        //     arr[i] = val;
+        // }
+        //int ans = e1.second(arr);
+        //System.out.println("The second largest : "+ans);
+
+        // int[] arr1 = {1,1,2,4,2,1,5};
+        // List<String> ans = e1.count(arr1);
+        // System.out.println(ans);
+
+        // int[] arr = {0,1,2,4};
+        // int miss = e1.missing_xor(arr);
+        // System.out.println(miss);
+
+        int[] arr = {7, 5, 6, 1, 4, 2};
+        int ans = e1.this_miss(arr);
+        System.out.println(ans);
+    }
 }
-
-
