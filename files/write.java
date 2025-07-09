@@ -2,13 +2,13 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.BufferedReader;
-//usual write
+// usual write
 // public class write{
 //     public static void main(String args[])
 //     {
 //         try{
-//             FileWriter fw = new FileWriter("test.txt",true);
-//             fw.append("\nagain append panrenda");
+//             FileWriter fw = new FileWriter("text.txt",false);
+//             fw.append("puthusa create panni write");
 //             fw.close();
 //             System.out.println("file written");
 //         }
@@ -27,7 +27,7 @@ import java.io.BufferedReader;
 //             BufferedWriter bw = new BufferedWriter(fw);
 //             //bw.write("first line");
 //             //bw.newLine();
-//             bw.append("appended something to the file");
+//             bw.write("\nappended something to the file");
 //             bw.close();
 //         }
 //         catch(Exception e){
@@ -44,7 +44,7 @@ import java.io.BufferedReader;
 //             FileReader fr = new FileReader("test.txt");
 //             int c = fr.read();
 //             while(c!=-1){
-//                 System.out.println((char)c);
+//                 System.out.print((char)c);
 //                 c = fr.read();
 //             }
 //             fr.close();
